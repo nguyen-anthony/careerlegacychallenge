@@ -1,11 +1,12 @@
-const careerRows = document.getElementsByClassName("careerRow");
 var parentCheckBoxes = document.querySelectorAll(".packCheckBox");
-// var subOptions = document.querySelectorAll(".subOption");
-
 
 const randomizeBtn = document.getElementById("randomizeCareerBtn");
 const selectedCareer = document.getElementById("careerchoice");
 
+/*
+* Randomize button functionality.
+* Repeatedly randomizes a career choice based on what suboptions are checked for 1.5 seconds and updates the output
+*/
 randomizeBtn.addEventListener("click", () => {
   var listOfAvailableCareers = document.querySelectorAll(
     'input[class="subOption"]:checked'
@@ -21,8 +22,14 @@ randomizeBtn.addEventListener("click", () => {
   }, 1500);
 });
 
+//Get all game pack checkboxes
 var checkall = document.querySelectorAll('.packCheckBox');
 
+/*
+* Two parts:
+* 1. Sets indeterminate, checked, or unchecked based on number of subOptions are checked
+* 2. Check all subOptions if game pack option is checked
+*/
 checkall.forEach(function (check) {
   var subOptions = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
 
@@ -34,13 +41,11 @@ checkall.forEach(function (check) {
       check.indeterminate = checkedCount > 0 && checkedCount < subOptions.length;
     }
   }
-});
 
-checkall.forEach(function (check) {
   check.onclick = function () {
-    var checkedCount = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
-    for (var i = 0; i < checkedCount.length; i++) {
-      checkedCount[i].checked = this.checked;
+    var subOptions = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
+    for (var i = 0; i < subOptions.length; i++) {
+      subOptions[i].checked = this.checked;
     }
   }
 });
