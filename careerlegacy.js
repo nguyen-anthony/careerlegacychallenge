@@ -1,6 +1,6 @@
 const careerRows = document.getElementsByClassName("careerRow");
 var parentCheckBoxes = document.querySelectorAll(".packCheckBox");
-var subOptions = document.querySelectorAll(".subOption");
+// var subOptions = document.querySelectorAll(".subOption");
 
 
 const randomizeBtn = document.getElementById("randomizeCareerBtn");
@@ -21,5 +21,26 @@ randomizeBtn.addEventListener("click", () => {
   }, 1500);
 });
 
+var checkall = document.querySelectorAll('.packCheckBox');
 
-console.log(document.querySelectorAll(".testClass input"));
+checkall.forEach(function (check) {
+  var subOptions = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
+
+  for (var i = 0; i < subOptions.length; i++) {
+    subOptions[i].onclick = function () {
+      var checkedCount = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input:checked').length;
+
+      check.checked = checkedCount > 0;
+      check.indeterminate = checkedCount > 0 && checkedCount < subOptions.length;
+    }
+  }
+});
+
+checkall.forEach(function (check) {
+  check.onclick = function () {
+    var checkedCount = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
+    for (var i = 0; i < checkedCount.length; i++) {
+      checkedCount[i].checked = this.checked;
+    }
+  }
+});
