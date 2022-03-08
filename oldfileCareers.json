@@ -1,0 +1,114 @@
+{
+  "astronaut": {
+    "id": "1",
+    "pack": "basegame"
+  },
+  "athlete": {
+    "id": "2",
+    "pack": "basegame"
+  },
+  "business": {
+    "id": "3",
+    "pack": "basegame"
+  },
+  "criminal": {
+    "id": "4",
+    "pack": "basegame"
+  },
+  "culinary": {
+    "id": "5",
+    "pack": "basegame"
+  },
+  "entertainer": {
+    "id": "6",
+    "pack": "basegame"
+  },
+  "freelancer": {
+    "id": "7",
+    "pack": "basegame"
+  },
+  "painter": {
+    "id": "8",
+    "pack": "basegame"
+  },
+  "secretagent": {
+    "id": "9",
+    "pack": "basegame"
+  },
+  "styleinfluencer": {
+    "id": "10",
+    "pack": "basegame"
+  },
+  "techguru": {
+    "id": "11",
+    "pack": "basegame"
+  },
+  "writer": {
+    "id": "12",
+    "pack": "basegame"
+  },
+  "detective": {
+    "id": "13",
+    "pack": "gettowork"
+  },
+  "doctor": {
+    "id": "14",
+    "pack": "gettowork"
+  },
+  "scientist": {
+    "id": "15",
+    "pack": "gettowork"
+  },
+  "critic": {
+    "id": "16",
+    "pack": "cityliving"
+  },
+  "politician": {
+    "id": "17",
+    "pack": "cityliving"
+  },
+  "socialmedia": {
+    "id": "18",
+    "pack": "cityliving"
+  },
+  "gardener": {
+    "id": "19",
+    "pack": "seasons"
+  },
+  "actor": {
+    "id": "20",
+    "pack": "getfamous"
+  },
+  "military": {
+    "id": "21",
+    "pack": "strangerville"
+  },
+  "conservationist": {
+    "id": "22",
+    "pack": "islandliving"
+  },
+  "education": {
+    "id": "23",
+    "pack": "discoveruniversity"
+  },
+  "engineer": {
+    "id": "24",
+    "pack": "discoveruniversity"
+  },
+  "law": {
+    "id": "25",
+    "pack": "discoveruniversity"
+  },
+  "civilengineer": {
+    "id": "26",
+    "pack": "ecolifestyle"
+  },
+  "salaryperson": {
+    "id": "27",
+    "pack": "snowescape"
+  },
+  "interiordecorator": {
+    "id": "28",
+    "pack": "dreamhomedecorator"
+  }
+}
