@@ -36,6 +36,7 @@ var checkall = document.querySelectorAll('.packCheckBox');
 */
 checkall.forEach(function (check) {
   var subOptions = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
+  var subOptionList = document.querySelector('#' + CSS.escape(check.id) + '+label+ul');
 
   for (var i = 0; i < subOptions.length; i++) {
     subOptions[i].onclick = function () {
@@ -43,12 +44,15 @@ checkall.forEach(function (check) {
 
       check.checked = checkedCount > 0;
       check.indeterminate = checkedCount > 0 && checkedCount < subOptions.length;
+      if(checkedCount == 0){
+        subOptionList.style.display = "none";
+      } else {
+        subOptionList.style.display = "block";
+      }
     }
   }
 
   check.onclick = function () {
-    var subOptionList = document.querySelector('#' + CSS.escape(check.id) + '+label+ul');
-    var subOptions = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
     for (var i = 0; i < subOptions.length; i++) {
       subOptions[i].checked = this.checked;
     }
