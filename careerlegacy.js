@@ -12,6 +12,10 @@ randomizeBtn.addEventListener("click", () => {
     'input[class="subOption"]:checked'
   );
 
+  if (listOfAvailableCareers.length == 0) {
+    selectedCareer.innerHTML = "No careers selected!";
+  }
+
   var randomize = setInterval(function () {
     var random = Math.floor(Math.random() * listOfAvailableCareers.length);
     selectedCareer.innerHTML = listOfAvailableCareers[random].name;
@@ -43,9 +47,15 @@ checkall.forEach(function (check) {
   }
 
   check.onclick = function () {
+    var subOptionList = document.querySelector('#' + CSS.escape(check.id) + '+label+ul');
     var subOptions = document.querySelectorAll('#' + CSS.escape(check.id) + '+label+ul input');
     for (var i = 0; i < subOptions.length; i++) {
       subOptions[i].checked = this.checked;
+    }
+    if(subOptionList.style.display === "none"){
+      subOptionList.style.display = "block";
+    } else {
+      subOptionList.style.display = "none";
     }
   }
 });
