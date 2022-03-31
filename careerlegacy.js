@@ -24,6 +24,19 @@ randomizeBtn.addEventListener("click", () => {
   setTimeout(function () {
     clearInterval(randomize);
     console.log(selectedCareer.innerHTML);
+    setTimeout(function () {
+      if (
+        confirm(
+          "Do you want to play the " + selectedCareer.innerHTML + " career?"
+        )
+      ) {
+        $("#completedList").append("<li>" + selectedCareer.innerHTML + "</li>");
+        let inputCheckbox = document.querySelector(
+          'input[name="' + selectedCareer.innerHTML + '"]'
+        );
+        inputCheckbox.checked = false;
+      }
+    }, 300);
   }, 1500);
 
   // setTimeout(console.log(selectedCareer.innerHTML), 3000);
