@@ -26,170 +26,172 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-5">
+            <div class="col">
                 <h3>Packs/Careers List</h3>
-                <ul style="list-style-type: none;">
-                    <li>
-                        <input class="packCheckBox" type="checkbox" name="basegame" id="basegame" value="1">
-                        <label for="basegame">Base Game</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Astronaut" value="1">
-                                    Astronaut</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Athlete" value="2">
-                                    Athlete</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Business" value="3">
-                                    Business</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Criminal" value="4">
-                                    Criminal</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Culinary" value="5">
-                                    Culinary</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Entertainer" value="6">
-                                    Entertainer</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Freelancer" value="7">
-                                    Freelancer</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Painter" value="8">
-                                    Painter</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Secret Agent" value="9"> Secret
-                                    Agent</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Style Influencer" value="10">
-                                    Style
-                                    Influencer</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Tech Guru" value="11"> Tech
-                                    Guru</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Writer" value="12"> Writer</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input class="packCheckBox" type="checkbox" name="gettowork" id="gettowork" value="2">
-                        <label for="gettowork">Get to Work</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Detective" value="13">
-                                    Detective</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Doctor" value="14"> Doctor</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Scientist" value="15">
-                                    Scientist</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input class="packCheckBox" type="checkbox" name="cityliving" id="cityliving" value="3">
-                        <label for="cityliving">City Living</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Critic" value="16"> Critic</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Politician" value="17">
-                                    Politician</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Social Media" value="18"> Social
-                                    Media</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
+                <div id="careerOptions">
+                    <ul style="list-style-type: none;">
+                        <li>
+                            <input class="packCheckBox" type="checkbox" name="basegame" id="basegame" value="1">
+                            <label for="basegame">Base Game</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Astronaut" value="1">
+                                        Astronaut</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Athlete" value="2">
+                                        Athlete</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Business" value="3">
+                                        Business</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Criminal" value="4">
+                                        Criminal</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Culinary" value="5">
+                                        Culinary</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Entertainer" value="6">
+                                        Entertainer</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Freelancer" value="7">
+                                        Freelancer</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Painter" value="8">
+                                        Painter</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Secret Agent" value="9">
+                                        Secret
+                                        Agent</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Style Influencer" value="10">
+                                        Style
+                                        Influencer</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Tech Guru" value="11"> Tech
+                                        Guru</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Writer" value="12">
+                                        Writer</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input class="packCheckBox" type="checkbox" name="gettowork" id="gettowork" value="2">
+                            <label for="gettowork">Get to Work</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Detective" value="13">
+                                        Detective</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Doctor" value="14">
+                                        Doctor</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Scientist" value="15">
+                                        Scientist</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input class="packCheckBox" type="checkbox" name="cityliving" id="cityliving" value="3">
+                            <label for="cityliving">City Living</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Critic" value="16">
+                                        Critic</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Politician" value="17">
+                                        Politician</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Social Media" value="18">
+                                        Social
+                                        Media</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
 
-                        <input class="packCheckBox" type="checkbox" name="seasons" id="seasons" value="4">
-                        <label for="seasons">Seasons</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Gardener" value="19">
-                                    Gardener</label></li>
-                        </ul>
-                    </li>
-                    <li>
+                            <input class="packCheckBox" type="checkbox" name="seasons" id="seasons" value="4">
+                            <label for="seasons">Seasons</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Gardener" value="19">
+                                        Gardener</label></li>
+                            </ul>
+                        </li>
+                        <li>
 
-                        <input class="packCheckBox" type="checkbox" name="getfamous" id="getfamous" value="5">
-                        <label for="getfamous">Get Famous</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Actor" value="20"> Actor</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
+                            <input class="packCheckBox" type="checkbox" name="getfamous" id="getfamous" value="5">
+                            <label for="getfamous">Get Famous</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Actor" value="20">
+                                        Actor</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
 
-                        <input class="packCheckBox" type="checkbox" name="strangerville" id="strangerville" value="6">
-                        <label for="strangerville">Strangerville</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Military" value="21">
-                                    Military</label></li>
-                        </ul>
-                    </li>
-                    <li>
+                            <input class="packCheckBox" type="checkbox" name="strangerville" id="strangerville"
+                                value="6">
+                            <label for="strangerville">Strangerville</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Military" value="21">
+                                        Military</label></li>
+                            </ul>
+                        </li>
+                        <li>
 
-                        <input class="packCheckBox" type="checkbox" name="islandliving" id="islandliving" value="7">
-                        <label for="islandliving">Island Living</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Conservationist" value="22">
-                                    Conservationist</label></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input class="packCheckBox" type="checkbox" name="discoveruniversity" id="discoveruniversity"
-                            value="8">
-                        <label for="discoveruniversity">Discover University</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Education" value="23">
-                                    Education</label>
-                            </li>
-                            <li><label><input type="checkbox" class="subOption" name="Engineer" value="24">
-                                    Engineer</label></li>
-                            <li><label><input type="checkbox" class="subOption" name="Lawyer" value="25"> Lawyer</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
+                            <input class="packCheckBox" type="checkbox" name="islandliving" id="islandliving" value="7">
+                            <label for="islandliving">Island Living</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Conservationist" value="22">
+                                        Conservationist</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input class="packCheckBox" type="checkbox" name="discoveruniversity"
+                                id="discoveruniversity" value="8">
+                            <label for="discoveruniversity">Discover University</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Education" value="23">
+                                        Education</label>
+                                </li>
+                                <li><label><input type="checkbox" class="subOption" name="Engineer" value="24">
+                                        Engineer</label></li>
+                                <li><label><input type="checkbox" class="subOption" name="Lawyer" value="25">
+                                        Lawyer</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
 
-                        <input class="packCheckBox" type="checkbox" name="ecolifestyle" id="ecolifestyle" value="9">
-                        <label for="ecolifestyle">Eco Lifestyle</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Civil Designer" value="26"> Civil
-                                    Designer</label></li>
-                        </ul>
-                    </li>
-                    <li>
+                            <input class="packCheckBox" type="checkbox" name="ecolifestyle" id="ecolifestyle" value="9">
+                            <label for="ecolifestyle">Eco Lifestyle</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Civil Designer" value="26">
+                                        Civil
+                                        Designer</label></li>
+                            </ul>
+                        </li>
+                        <li>
 
-                        <input class="packCheckBox" type="checkbox" name="snowyescape" id="snowyescape" value="10">
-                        <label for="snowyescape">Snowy Escape</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Salaryperson" value="27">
-                                    Salaryperson</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input class="packCheckBox" type="checkbox" name="dreamhomedecorator" id="dreamhomedecorator"
-                            value="11">
-                        <label for="dreamhomedecorator">Dream Home Decorator</label>
-                        <ul style="display: none;">
-                            <li><label><input type="checkbox" class="subOption" name="Dream Home Decorator" value="28">
-                                    Interior Decorator</label>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                            <input class="packCheckBox" type="checkbox" name="snowyescape" id="snowyescape" value="10">
+                            <label for="snowyescape">Snowy Escape</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Salaryperson" value="27">
+                                        Salaryperson</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input class="packCheckBox" type="checkbox" name="dreamhomedecorator"
+                                id="dreamhomedecorator" value="11">
+                            <label for="dreamhomedecorator">Dream Home Decorator</label>
+                            <ul style="display: none;">
+                                <li><label><input type="checkbox" class="subOption" name="Dream Home Decorator"
+                                            value="28">
+                                        Interior Decorator</label>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- <div class="col-4">
-                <table id="table">
-                    <tr>
-                        <th>Name</th>
-                         <th>ID</th>
-                        <th>Pack</th>
-                    </tr>
-
-                </table>
-            </div> -->
             <div class="col">
                 <h3>Randomizer</h3>
                 <div id="careerchoice">

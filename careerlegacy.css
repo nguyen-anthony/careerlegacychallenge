@@ -1,7 +1,26 @@
-table {
+/* table {
   margin: 0 auto;
   font-size: large;
   border: 1px solid black;
+} */
+
+body {
+  padding: 4em;
+}
+
+.row > div {
+  border-right: solid;
+  border-color: black;
+  border-width: 0.1em;
+}
+
+.row > div:last-of-type {
+  border-right: none;
+}
+
+#careerOptions {
+  overflow: scroll;
+  height: 500px;
 }
 
 h1 {
@@ -12,7 +31,7 @@ h1 {
     "sans-serif";
 }
 
-td {
+/* td {
   background-color: #e4f5d4;
   border: 1px solid black;
 }
@@ -27,7 +46,7 @@ td {
 
 td {
   font-weight: lighter;
-}
+} */
 
 ul {
   list-style-type: none;
