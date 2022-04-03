@@ -40,6 +40,7 @@ randomizeBtn.addEventListener("click", () => {
             'input[name="' + selectedCareer.innerHTML + '"]'
           );
           inputCheckbox.checked = false;
+          inputCheckbox.disabled = true;
         }
       }, 300);
     }, 1500);
