@@ -31,6 +31,17 @@ h1 {
     "sans-serif";
 }
 
+#careerchoice {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
 /* td {
   background-color: #e4f5d4;
   border: 1px solid black;

@@ -10,6 +10,7 @@ var checkall = document.querySelectorAll(".packCheckBox");
  * Randomize button functionality.
  * Repeatedly randomizes a career choice based on what suboptions are checked for 1.5 seconds and updates the output
  */
+let genNum = 1;
 randomizeBtn.addEventListener("click", () => {
   var listOfAvailableCareers = document.querySelectorAll(
     'input[class="subOption"]:checked'
@@ -34,8 +35,13 @@ randomizeBtn.addEventListener("click", () => {
           )
         ) {
           $("#completedList").append(
-            "<li>" + selectedCareer.innerHTML + "</li>"
+            "<li> Generation " +
+              genNum +
+              " - " +
+              selectedCareer.innerHTML +
+              "</li>"
           );
+          genNum++;
           let inputCheckbox = document.querySelector(
             'input[name="' + selectedCareer.innerHTML + '"]'
           );
