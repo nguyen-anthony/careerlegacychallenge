@@ -20,6 +20,10 @@ body {
   text-align: center;
 }
 
+.careersList {
+  text-align: left;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0 50%;
