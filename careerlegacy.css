@@ -8,6 +8,16 @@ html {
   width: 100%;
 }
 
+#logoDiv {
+  text-align: center;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+#logo {
+  width: 350px;
+}
+
 body {
   background-color: #923cb5;
   background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
@@ -52,7 +62,7 @@ body {
 
 #careerOptions {
   overflow: scroll;
-  height: 500px;
+  height: 350px;
 }
 
 h1 {
