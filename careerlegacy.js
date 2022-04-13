@@ -13,7 +13,7 @@ var checkall = document.querySelectorAll(".packCheckBox");
 let genNum = 1;
 randomizeBtn.addEventListener("click", () => {
   var listOfAvailableCareers = document.querySelectorAll(
-    'input[class="subOption"]:checked'
+    'input[class="subOption form-check-input"]:checked'
   );
 
   if (listOfAvailableCareers.length == 0) {

@@ -62,15 +62,8 @@ body {
 
 #careerOptions {
   overflow: scroll;
-  height: 350px;
-}
-
-h1 {
-  text-align: center;
-  color: #006600;
-  font-size: xx-large;
-  font-family: "Gill Sans", "Gill Sans MT", " Calibri", "Trebuchet MS",
-    "sans-serif";
+  overflow-x: hidden;
+  height: 450px;
 }
 
 #careerchoice {
