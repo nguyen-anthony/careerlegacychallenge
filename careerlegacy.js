@@ -1,4 +1,4 @@
-var parentCheckBoxes = document.querySelectorAll(".packCheckBox");
+//TODO: Parent Checkboxes need to be
 
 const randomizeBtn = document.getElementById("randomizeCareerBtn");
 const selectedCareer = document.getElementById("careerchoice");
@@ -109,10 +109,14 @@ function checkParent() {
       var checkedCount = document.querySelectorAll(
         "#" + CSS.escape(check.id) + "+label+ul input:checked"
       ).length;
+      var disabledCount = document.querySelectorAll(
+        "#" + CSS.escape(check.id) + "+label+ul input:disabled"
+      ).length;
 
       check.checked = checkedCount > 0;
       check.indeterminate =
         checkedCount > 0 && checkedCount < subOptions.length;
+      check.disabled = disabledCount == subOptions.length;
       if (checkedCount == 0) {
         subOptionList.style.display = "none";
       } else {
