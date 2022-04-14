@@ -87,7 +87,7 @@ checkall.forEach(function (check) {
 
   check.onclick = function () {
     for (var i = 0; i < subOptions.length; i++) {
-      subOptions[i].checked = this.checked;
+      subOptions[i].checked = this.checked && !subOptions[i].disabled;
     }
     if (subOptionList.style.display === 'none') {
       subOptionList.style.display = 'block';
@@ -159,3 +159,30 @@ exportBtn.addEventListener('click', function () {
   getCompletedCareers();
   createCSV();
 });
+
+document
+  .getElementById('fileInput')
+  .addEventListener('change', handleFileSelect, false);
+
+function handleFileSelect(event) {
+  const reader = new FileReader();
+  reader.onload = handleFileLoad;
+  reader.readAsText(event.target.files[0]);
+}
+
+function handleFileLoad(event) {
+  //console.log(event);
+  //document.getElementById('fileContent').textContent = event.target.result;
+  let careerListFromFile = event.target.result.split('\n');
+  console.log(careerListFromFile);
+  for (let career of careerListFromFile) {
+    $('#completedList').append(
+      '<li>Generation ' + genNum + ' - ' + career + '</li>'
+    );
+    genNum++;
+    let inputCheckbox = document.querySelector('input[name="' + career + '"]');
+    inputCheckbox.checked = false;
+    inputCheckbox.disabled = true;
+    checkParent();
+  }
+}

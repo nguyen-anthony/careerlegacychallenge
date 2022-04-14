@@ -80,3 +80,7 @@ body {
 ul {
   list-style-type: none;
 }
+
+#buttonActions {
+  text-align: center;
+}
