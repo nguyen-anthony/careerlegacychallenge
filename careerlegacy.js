@@ -1,24 +1,24 @@
 //TODO: Parent Checkboxes need to be
 
-const randomizeBtn = document.getElementById("randomizeCareerBtn");
-const selectedCareer = document.getElementById("careerchoice");
+const randomizeBtn = document.getElementById('randomizeCareerBtn');
+const selectedCareer = document.getElementById('careerchoice');
 
 //Get all game pack checkboxes
-var checkall = document.querySelectorAll(".packCheckBox");
+var checkall = document.querySelectorAll('.packCheckBox');
 
 /*
  * Randomize button functionality.
  * Repeatedly randomizes a career choice based on what suboptions are checked for 1.5 seconds and updates the output
  */
 let genNum = 1;
-randomizeBtn.addEventListener("click", () => {
+randomizeBtn.addEventListener('click', () => {
   var listOfAvailableCareers = document.querySelectorAll(
     'input[class="subOption form-check-input"]:checked'
   );
 
   if (listOfAvailableCareers.length == 0) {
-    selectedCareer.innerHTML = "No careers selected!";
-    alert("Please select some careers in the list!");
+    selectedCareer.innerHTML = 'No careers selected!';
+    alert('Please select some careers in the list!');
   } else {
     var randomize = setInterval(function () {
       var random = Math.floor(Math.random() * listOfAvailableCareers.length);
@@ -31,15 +31,15 @@ randomizeBtn.addEventListener("click", () => {
       setTimeout(function () {
         if (
           confirm(
-            "Do you want to play the " + selectedCareer.innerHTML + " career?"
+            'Do you want to play the ' + selectedCareer.innerHTML + ' career?'
           )
         ) {
-          $("#completedList").append(
-            "<li> Generation " +
+          $('#completedList').append(
+            '<li>Generation ' +
               genNum +
-              " - " +
+              ' - ' +
               selectedCareer.innerHTML +
-              "</li>"
+              '</li>'
           );
           genNum++;
           let inputCheckbox = document.querySelector(
@@ -61,25 +61,25 @@ randomizeBtn.addEventListener("click", () => {
  */
 checkall.forEach(function (check) {
   var subOptions = document.querySelectorAll(
-    "#" + CSS.escape(check.id) + "+label+ul input"
+    '#' + CSS.escape(check.id) + '+label+ul input'
   );
   var subOptionList = document.querySelector(
-    "#" + CSS.escape(check.id) + "+label+ul"
+    '#' + CSS.escape(check.id) + '+label+ul'
   );
 
   for (var i = 0; i < subOptions.length; i++) {
     subOptions[i].onclick = function () {
       var checkedCount = document.querySelectorAll(
-        "#" + CSS.escape(check.id) + "+label+ul input:checked"
+        '#' + CSS.escape(check.id) + '+label+ul input:checked'
       ).length;
 
       check.checked = checkedCount > 0;
       check.indeterminate =
         checkedCount > 0 && checkedCount < subOptions.length;
       if (checkedCount == 0) {
-        subOptionList.style.display = "none";
+        subOptionList.style.display = 'none';
       } else {
-        subOptionList.style.display = "block";
+        subOptionList.style.display = 'block';
       }
     };
   }
@@ -88,10 +88,10 @@ checkall.forEach(function (check) {
     for (var i = 0; i < subOptions.length; i++) {
       subOptions[i].checked = this.checked;
     }
-    if (subOptionList.style.display === "none") {
-      subOptionList.style.display = "block";
+    if (subOptionList.style.display === 'none') {
+      subOptionList.style.display = 'block';
     } else {
-      subOptionList.style.display = "none";
+      subOptionList.style.display = 'none';
     }
   };
 });
@@ -99,18 +99,18 @@ checkall.forEach(function (check) {
 function checkParent() {
   checkall.forEach(function (check) {
     var subOptions = document.querySelectorAll(
-      "#" + CSS.escape(check.id) + "+label+ul input"
+      '#' + CSS.escape(check.id) + '+label+ul input'
     );
     var subOptionList = document.querySelector(
-      "#" + CSS.escape(check.id) + "+label+ul"
+      '#' + CSS.escape(check.id) + '+label+ul'
     );
 
     for (var i = 0; i < subOptions.length; i++) {
       var checkedCount = document.querySelectorAll(
-        "#" + CSS.escape(check.id) + "+label+ul input:checked"
+        '#' + CSS.escape(check.id) + '+label+ul input:checked'
       ).length;
       var disabledCount = document.querySelectorAll(
-        "#" + CSS.escape(check.id) + "+label+ul input:disabled"
+        '#' + CSS.escape(check.id) + '+label+ul input:disabled'
       ).length;
 
       check.checked = checkedCount > 0;
@@ -118,10 +118,27 @@ function checkParent() {
         checkedCount > 0 && checkedCount < subOptions.length;
       check.disabled = disabledCount == subOptions.length;
       if (checkedCount == 0) {
-        subOptionList.style.display = "none";
+        subOptionList.style.display = 'none';
       } else {
-        subOptionList.style.display = "block";
+        subOptionList.style.display = 'block';
       }
     }
   });
+}
+
+let completedCareers = [];
+
+function getCompletedCareers() {
+  completedCareers = [];
+  let listItems = document.querySelectorAll('#completedList li');
+
+  for (let item of listItems) {
+    let listItemContent = item.innerHTML;
+    let careerName = listItemContent.substring(
+      listItemContent.indexOf('-') + 2
+    );
+    completedCareers.push(careerName);
+  }
+
+  return completedCareers;
 }
