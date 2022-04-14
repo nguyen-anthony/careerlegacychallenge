@@ -171,8 +171,6 @@ function handleFileSelect(event) {
 }
 
 function handleFileLoad(event) {
-  //console.log(event);
-  //document.getElementById('fileContent').textContent = event.target.result;
   let careerListFromFile = event.target.result.split('\n');
   console.log(careerListFromFile);
   for (let career of careerListFromFile) {
