@@ -2,6 +2,7 @@
 
 const randomizeBtn = document.getElementById('randomizeCareerBtn');
 const selectedCareer = document.getElementById('careerchoice');
+const exportBtn = document.getElementById('export');
 
 //Get all game pack checkboxes
 var checkall = document.querySelectorAll('.packCheckBox');
@@ -142,3 +143,19 @@ function getCompletedCareers() {
 
   return completedCareers;
 }
+
+function createCSV() {
+  var csv = '';
+  csv += completedCareers.join('\n');
+
+  var hiddenElement = document.createElement('a');
+  hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+  hiddenElement.target = '_blank';
+  hiddenElement.download = 'careerList.txt';
+  hiddenElement.click();
+}
+
+exportBtn.addEventListener('click', function () {
+  getCompletedCareers();
+  createCSV();
+});
