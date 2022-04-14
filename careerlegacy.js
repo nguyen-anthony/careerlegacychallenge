@@ -1,11 +1,71 @@
-//TODO: Parent Checkboxes need to be
+
+
+window.onload = function(){
+  checkCareersCookie();
+}
 
 const randomizeBtn = document.getElementById('randomizeCareerBtn');
 const selectedCareer = document.getElementById('careerchoice');
 const exportBtn = document.getElementById('export');
+const saveBtn = document.getElementById('saveCookie');
 
 //Get all game pack checkboxes
 var checkall = document.querySelectorAll('.packCheckBox');
+
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = 'expires=' + d.toUTCString();
+  document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCareersCookie(){
+  let careers = getCookie("careers");
+  if(careers != ""){
+    let careersList = careers.split(',');
+    console.log(careersList);
+    for (let career of careersList) {
+      $('#completedList').append(
+        '<li>Generation ' + genNum + ' - ' + career + '</li>'
+      );
+      genNum++;
+      let inputCheckbox = document.querySelector('input[name="' + career + '"]');
+      inputCheckbox.checked = false;
+      inputCheckbox.disabled = true;
+      checkParent();
+    }
+  }
+}
+
+// function checkCookie() {
+//   let user = getCookie("username");
+//   if (user != "") {
+//     alert("Welcome again " + user);
+//   } else {
+//      user = prompt("Please enter your name:","");
+//      if (user != "" && user != null) {
+//        setCookie("username", user, 30);
+//      }
+//   }
+// }
+
+
 
 /*
  * Randomize button functionality.
@@ -158,6 +218,11 @@ function createCSV() {
 exportBtn.addEventListener('click', function () {
   getCompletedCareers();
   createCSV();
+});
+
+saveBtn.addEventListener('click', function () {
+  let careers = getCompletedCareers();
+  setCookie("careers", careers, 30);
 });
 
 document
