@@ -1,8 +1,6 @@
-
-
-window.onload = function(){
+window.onload = function () {
   checkCareersCookie();
-}
+};
 
 const randomizeBtn = document.getElementById('randomizeCareerBtn');
 const selectedCareer = document.getElementById('careerchoice');
@@ -12,18 +10,18 @@ const saveBtn = document.getElementById('saveCookie');
 //Get all game pack checkboxes
 var checkall = document.querySelectorAll('.packCheckBox');
 
-function setCookie(cname,cvalue,exdays) {
+function setCookie(cname, cvalue, exdays) {
   const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
   let expires = 'expires=' + d.toUTCString();
   document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
 }
 
 function getCookie(cname) {
-  let name = cname + "=";
+  let name = cname + '=';
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
+  for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
@@ -32,12 +30,12 @@ function getCookie(cname) {
       return c.substring(name.length, c.length);
     }
   }
-  return "";
+  return '';
 }
 
-function checkCareersCookie(){
-  let careers = getCookie("careers");
-  if(careers != ""){
+function checkCareersCookie() {
+  let careers = getCookie('careers');
+  if (careers != '') {
     let careersList = careers.split(',');
     console.log(careersList);
     for (let career of careersList) {
@@ -45,7 +43,9 @@ function checkCareersCookie(){
         '<li>Generation ' + genNum + ' - ' + career + '</li>'
       );
       genNum++;
-      let inputCheckbox = document.querySelector('input[name="' + career + '"]');
+      let inputCheckbox = document.querySelector(
+        'input[name="' + career + '"]'
+      );
       inputCheckbox.checked = false;
       inputCheckbox.disabled = true;
       checkParent();
@@ -64,8 +64,6 @@ function checkCareersCookie(){
 //      }
 //   }
 // }
-
-
 
 /*
  * Randomize button functionality.
@@ -221,8 +219,11 @@ exportBtn.addEventListener('click', function () {
 });
 
 saveBtn.addEventListener('click', function () {
+  alert(
+    "Saving uses a cookie on your browser. If you clear your browser's cookies, your progress will be deleted. Highly recommend that you export your data as well!"
+  );
   let careers = getCompletedCareers();
-  setCookie("careers", careers, 30);
+  setCookie('careers', careers, 30);
 });
 
 document
