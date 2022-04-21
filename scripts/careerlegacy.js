@@ -53,18 +53,6 @@ function checkCareersCookie() {
   }
 }
 
-// function checkCookie() {
-//   let user = getCookie("username");
-//   if (user != "") {
-//     alert("Welcome again " + user);
-//   } else {
-//      user = prompt("Please enter your name:","");
-//      if (user != "" && user != null) {
-//        setCookie("username", user, 30);
-//      }
-//   }
-// }
-
 /*
  * Randomize button functionality.
  * Repeatedly randomizes a career choice based on what suboptions are checked for 1.5 seconds and updates the output
@@ -175,7 +163,12 @@ function checkParent() {
       check.checked = checkedCount > 0;
       check.indeterminate =
         checkedCount > 0 && checkedCount < subOptions.length;
-      check.disabled = disabledCount == subOptions.length;
+      if(disabledCount == subOptions.length){
+        check.disabled = true;
+        check.labels[0].style.textDecoration = 'line-through';
+      }
+      // check.disabled = disabledCount == subOptions.length;
+      //var label = $("label[for='" + $(this).attr('id') + "']");
       if (checkedCount == 0) {
         subOptionList.style.display = 'none';
       } else {

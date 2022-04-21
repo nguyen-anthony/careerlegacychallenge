@@ -70,9 +70,6 @@ body {
   padding-top: 1em;
   padding-bottom: 1em;
   text-align: center;
-  border: 2px;
-  border-color: white;
-  border-style: solid;
   margin-bottom: 2em;
   margin-top: 2em;
 }
@@ -83,4 +80,12 @@ ul {
 
 #buttonActions {
   text-align: center;
+}
+
+button {
+  margin-top: 1em;
+}
+
+#fileInput {
+  margin-top: 1em;
 }
