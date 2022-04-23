@@ -163,7 +163,7 @@ function checkParent() {
       check.checked = checkedCount > 0;
       check.indeterminate =
         checkedCount > 0 && checkedCount < subOptions.length;
-      if(disabledCount == subOptions.length){
+      if (disabledCount == subOptions.length) {
         check.disabled = true;
         check.labels[0].style.textDecoration = 'line-through';
       }
@@ -243,3 +243,7 @@ function handleFileLoad(event) {
     checkParent();
   }
 }
+
+// $(function () {
+//   $('#pills-rules').load('rules.html');
+// });

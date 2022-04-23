@@ -19,10 +19,8 @@ html {
 }
 
 body {
-  background-color: #923cb5;
-  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+  background-color: #1a2913;
   background-size: 400% 400%;
-  animation: gradient 12s ease infinite;
   color: white;
 }
 
@@ -67,11 +65,19 @@ body {
 }
 
 #careerchoice {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  /* padding-top: 0.4em;
+  padding-bottom: 0.4em; */
+  padding: 0.4em;
   text-align: center;
-  margin-bottom: 2em;
-  margin-top: 2em;
+  margin: 0 auto;
+  font-size: 1.5em;
+  display: table;
+  font-weight: bold;
+}
+
+#pills-rules {
+  margin: 0 auto;
+  width: 65%;
 }
 
 ul {
@@ -88,4 +94,41 @@ button {
 
 #fileInput {
   margin-top: 1em;
+}
+
+h2 {
+  text-align: center;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: black;
+  background-color: #fff3ea;
+}
+
+.nav-link {
+  color: #fff3ea;
+}
+
+#randomizeCareerBtn,
+#fileInput {
+  background-color: #5ca04a;
+  border-color: #000;
+}
+
+#saveCookie,
+#export {
+  background-color: #fff3ea;
+  color: #000;
+  border-color: #000;
+}
+
+#pills-youtube {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#ytText > p {
+  text-align: left;
+  width: 65%;
 }
