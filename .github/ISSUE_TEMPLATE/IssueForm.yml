@@ -23,5 +23,5 @@ body:
       options:
         - Bug/Issue
         - Feature Request
-      validations:
-        required: true
+    validations:
+      required: true
