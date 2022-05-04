@@ -1,11 +1,15 @@
-window.onload = function () {
+$(document).ready(function () {
+  if (location.hash == '#cs') {
+    document.getElementById('pills-tracker-tab').click();
+  }
   checkCareersCookie();
-};
+});
 
 const randomizeBtn = document.getElementById('randomizeCareerBtn');
 const selectedCareer = document.getElementById('careerchoice');
 const exportBtn = document.getElementById('export');
 const saveBtn = document.getElementById('saveCookie');
+const clearBtn = document.getElementById('clear');
 
 //Get all game pack checkboxes
 var checkall = document.querySelectorAll('.packCheckBox');
@@ -50,6 +54,18 @@ function checkCareersCookie() {
       inputCheckbox.disabled = true;
       checkParent();
     }
+  }
+}
+
+function clearCookie() {
+  if (
+    confirm(
+      'Please use the export button to backup your progress.\n Are you sure you want to clear all saved progress and start over?'
+    )
+  ) {
+    setCookie('careers', '', -1);
+    location.hash = 'cs';
+    location.reload();
   }
 }
 
@@ -217,6 +233,10 @@ saveBtn.addEventListener('click', function () {
   );
   let careers = getCompletedCareers();
   setCookie('careers', careers, 30);
+});
+
+clearBtn.addEventListener('click', function () {
+  clearCookie();
 });
 
 document
