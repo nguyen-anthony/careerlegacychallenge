@@ -1,7 +1,7 @@
 name: Bug Report/Feature Request Form
 description: Provide feedback to report bugs or request features
 labels: [Bug/Issue, Feature Request]
-title: 
+title: Bug Report/Feature Request Form
 assignees:
   - nguyen-anthony
 body:
