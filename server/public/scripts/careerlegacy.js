@@ -4,17 +4,13 @@ window.onload = function () {
 
 let careers;
 let gamepacks;
-var checkall;
 
 $(document).ready(function () {
   getGamePacks();
-  getCareers();
-
-  setupClickListeners();
 });
 
 function setupClickListeners() {
-  checkAll();
+  checkAllLogic();
   checkParent();
 }
 
@@ -27,6 +23,7 @@ function getCareers() {
       careers = response;
       console.log("careers: ", careers);
       createCheckboxes();
+      setupClickListeners();
     })
     .catch(function (error) {
       console.log("Error in get careers", error);
@@ -41,7 +38,7 @@ function getGamePacks() {
     .then(function (response) {
       gamepacks = response;
       console.log("gamepacks: ", gamepacks);
-      checkall = document.querySelectorAll(".packCheckBox");
+      getCareers();
     })
     .catch(function (error) {
       console.log("Error in get gamepack", error);
@@ -183,8 +180,9 @@ randomizeBtn.addEventListener("click", () => {
  * 1. Sets indeterminate, checked, or unchecked based on number of subOptions are checked
  * 2. Check all subOptions if game pack option is checked
  */
-function checkAll() {
-  $(".packCheckbox").each(function (check) {
+function checkAllLogic() {
+  let checkAll = document.querySelectorAll(".packCheckBox");
+  checkAll.forEach(function (check) {
     var subOptions = document.querySelectorAll(
       "#" + CSS.escape(check.id) + "+label+ul input"
     );
@@ -223,7 +221,8 @@ function checkAll() {
 }
 
 function checkParent() {
-  $(".packCheckbox").each(function (check) {
+  let checkAll = document.querySelectorAll(".packCheckBox");
+  checkAll.forEach(function (check) {
     var subOptions = document.querySelectorAll(
       "#" + CSS.escape(check.id) + "+label+ul input"
     );
