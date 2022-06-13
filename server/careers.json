@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Astronaut",
+    "gamepack_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Athlete",
+    "gamepack_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Business",
+    "gamepack_id": 1
+  },
+  {
+    "id": 4,
+    "name": "Criminal",
+    "gamepack_id": 1
+  },
+  {
+    "id": 5,
+    "name": "Culinary",
+    "gamepack_id": 1
+  },
+  {
+    "id": 6,
+    "name": "Entertainer",
+    "gamepack_id": 1
+  },
+  {
+    "id": 7,
+    "name": "Freelancer",
+    "gamepack_id": 1
+  },
+  {
+    "id": 8,
+    "name": "Painter",
+    "gamepack_id": 1
+  },
+  {
+    "id": 9,
+    "name": "Secret Agent",
+    "gamepack_id": 1
+  },
+  {
+    "id": 10,
+    "name": "Style Influencer",
+    "gamepack_id": 1
+  },
+  {
+    "id": 11,
+    "name": "Tech Guru",
+    "gamepack_id": 1
+  },
+  {
+    "id": 12,
+    "name": "Writer",
+    "gamepack_id": 1
+  },
+  {
+    "id": 13,
+    "name": "Detective",
+    "gamepack_id": 2
+  },
+  {
+    "id": 14,
+    "name": "Doctor",
+    "gamepack_id": 2
+  },
+  {
+    "id": 15,
+    "name": "Scientist",
+    "gamepack_id": 2
+  },
+  {
+    "id": 16,
+    "name": "Critic",
+    "gamepack_id": 3
+  },
+  {
+    "id": 17,
+    "name": "Politician",
+    "gamepack_id": 3
+  },
+  {
+    "id": 18,
+    "name": "Social Media",
+    "gamepack_id": 3
+  },
+  {
+    "id": 19,
+    "name": "Gardener",
+    "gamepack_id": 4
+  },
+  {
+    "id": 20,
+    "name": "Actor",
+    "gamepack_id": 5
+  },
+  {
+    "id": 21,
+    "name": "Military",
+    "gamepack_id": 6
+  },
+  {
+    "id": 22,
+    "name": "Conservationist",
+    "gamepack_id": 7
+  },
+  {
+    "id": 23,
+    "name": "Education",
+    "gamepack_id": 8
+  },
+  {
+    "id": 24,
+    "name": "Engineer",
+    "gamepack_id": 8
+  },
+  {
+    "id": 25,
+    "name": "Lawyer",
+    "gamepack_id": 8
+  },
+  {
+    "id": 26,
+    "name": "Civil Designer",
+    "gamepack_id": 9
+  },
+  {
+    "id": 27,
+    "name": "Salaryperson",
+    "gamepack_id": 10
+  },
+  {
+    "id": 28,
+    "name": "Interior Decorator",
+    "gamepack_id": 11
+  }
+]

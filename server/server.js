@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const port = 5001;
-const gamePackRouter = require("./routes/gamepack.router");
-const careerRouter = require("./routes/career.router");
+// const gamePackRouter = require("./routes/gamepack.router");
+// const careerRouter = require("./routes/career.router");
+const careerRouter = require("./routes/careerJSON.router");
+const gamePackRouter = require("./routes/gamepackJSON.router");
 
 //ROUTES
 app.use("/gamepack", gamePackRouter);

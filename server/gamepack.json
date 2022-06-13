@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Base Game"
+  },
+  {
+    "id": 2,
+    "name": "Get to Work"
+  },
+  {
+    "id": 3,
+    "name": "City Living"
+  },
+  {
+    "id": 4,
+    "name": "Seasons"
+  },
+  {
+    "id": 5,
+    "name": "Get Famous"
+  },
+  {
+    "id": 6,
+    "name": "Strangerville"
+  },
+  {
+    "id": 7,
+    "name": "Island Living"
+  },
+  {
+    "id": 8,
+    "name": "Discover University"
+  },
+  {
+    "id": 9,
+    "name": "Eco Lifestyle"
+  },
+  {
+    "id": 10,
+    "name": "Snowy Escape"
+  },
+  {
+    "id": 11,
+    "name": "Dream Home Decorator"
+  }
+]

@@ -4,9 +4,10 @@ window.onload = function () {
 
 let careers;
 let gamepacks;
+let careersPack;
 
 $(document).ready(function () {
-  getGamePacks();
+  getGamePacksJSON();
 });
 
 function setupClickListeners() {
@@ -14,40 +15,41 @@ function setupClickListeners() {
   checkParent();
 }
 
-function getCareers() {
+function getCareersJSON() {
   $.ajax({
     method: "GET",
     url: "/careers",
   })
     .then(function (response) {
       careers = response;
-      console.log("careers: ", careers);
-      createCheckboxes();
+      createCheckboxesFromJSON();
       setupClickListeners();
     })
     .catch(function (error) {
-      console.log("Error in get careers", error);
+      console.log("error in JSON", error);
     });
 }
 
-function getGamePacks() {
+function getGamePacksJSON() {
   $.ajax({
     method: "GET",
     url: "/gamepack",
   })
     .then(function (response) {
       gamepacks = response;
-      console.log("gamepacks: ", gamepacks);
-      getCareers();
+      getCareersJSON();
     })
     .catch(function (error) {
-      console.log("Error in get gamepack", error);
+      console.log(error);
     });
 }
 
-function createCheckboxes() {
-  checkboxLists = document.querySelector("#careerOptions>ul");
+function createCheckboxesFromJSON() {
+  // checkboxLists = document.querySelector("#careerOptions>ul");
+  checkboxLists = $("#careerOptions>ul");
+  checkboxLists.empty();
   for (let pack of gamepacks) {
+    // console.log("from createCheckBoxes function", item);
     let packName = pack.name.toLowerCase().split(" ").join("");
     let packCareers = careers.filter((career) => career.gamepack_id == pack.id);
     let packLi =
@@ -62,18 +64,18 @@ function createCheckboxes() {
       '">' +
       pack.name +
       '</label><ul style="display: none;">';
-    for (let packCareer of packCareers) {
+    for (let career of packCareers) {
       packLi +=
-        '<li><label><input type="checkbox" class="subOption form-check-input" name="' +
-        packCareer.name +
+        '<li><label><input type="checkBox" class="subOption form-check-input" name="' +
+        career.name +
         '" value="' +
-        packCareer.id +
+        career.id +
         '"/>' +
-        packCareer.name +
+        career.name +
         "</label></li>";
     }
     packLi += "</ul></li>";
-    $("#careerOptions>ul").append(packLi);
+    checkboxLists.append(packLi);
   }
 }
 
@@ -321,3 +323,67 @@ function handleFileLoad(event) {
     checkParent();
   }
 }
+
+/////////////////////////OLD STUFF - SAVING JUST IN CASE I SWITCH TO DB STORAGE
+// function getCareers() {
+//   $.ajax({
+//     method: "GET",
+//     url: "/careers",
+//   })
+//     .then(function (response) {
+//       careers = response;
+//       console.log("careers: ", careers);
+//       createCheckboxes();
+//       setupClickListeners();
+//     })
+//     .catch(function (error) {
+//       console.log("Error in get careers", error);
+//     });
+// }
+
+// function getGamePacks() {
+//   $.ajax({
+//     method: "GET",
+//     url: "/gamepack",
+//   })
+//     .then(function (response) {
+//       gamepacks = response;
+//       console.log("gamepacks: ", gamepacks);
+//       getCareers();
+//     })
+//     .catch(function (error) {
+//       console.log("Error in get gamepack", error);
+//     });
+// }
+
+// function createCheckboxes() {
+//   checkboxLists = document.querySelector("#careerOptions>ul");
+//   for (let pack of gamepacks) {
+//     let packName = pack.name.toLowerCase().split(" ").join("");
+//     let packCareers = careers.filter((career) => career.gamepack_id == pack.id);
+//     let packLi =
+//       '<li><input class="packCheckBox form-check-input" type="checkbox" name="' +
+//       packName +
+//       '" id="' +
+//       packName +
+//       '" value="' +
+//       pack.id +
+//       '"/><label for="' +
+//       packName +
+//       '">' +
+//       pack.name +
+//       '</label><ul style="display: none;">';
+//     for (let packCareer of packCareers) {
+//       packLi +=
+//         '<li><label><input type="checkbox" class="subOption form-check-input" name="' +
+//         packCareer.name +
+//         '" value="' +
+//         packCareer.id +
+//         '"/>' +
+//         packCareer.name +
+//         "</label></li>";
+//     }
+//     packLi += "</ul></li>";
+//     $("#careerOptions>ul").append(packLi);
+//   }
+// }
